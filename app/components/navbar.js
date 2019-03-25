@@ -2,7 +2,7 @@ import React from 'react';
 import ShowCandies from './candies';
 import Root from './root';
 import Candies from './candies';
-import {Link, Route} from 'react-router-dom';
+import {Link, History} from 'react-router-dom';
 
 export default class NavBar extends React.Component {
 	render() {

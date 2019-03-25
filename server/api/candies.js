@@ -5,7 +5,16 @@ const Candy = require('../db/models/Candy');
 router.get('/', async (req, res, next) => {
 	try {
 		const allCandies = await Candy.findAll();
-		res.send(allCandies);
+		res.json(allCandies);
+	} catch (err) {
+		next(err);
+	}
+});
+
+router.get('/:id', async (req, res, next) => {
+	try {
+		const singleCandy = await Candy.findById(req.params.id);
+		res.json(singleCandy);
 	} catch (err) {
 		next(err);
 	}
